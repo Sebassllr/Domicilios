@@ -1,4 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,24 +31,34 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 	<link href="${main}" rel="stylesheet" />
 <body>
-	<div class="border-body left-side">
+<div class="border-body left-side">
 		<div class="logo-img">
 			<div class="title"></div>
 		</div>
 		<div class ="buttons">
-		<button class="btn btn-primary mb-2" id="menu1" data-toggle="dropdown">Mensajeros </button> 
-				<ul class="dropdown-menu" type="submit" role="menu" aria-labelledby="menu1"> 
-					 <li id="addMensajero">Agregar </li>
-					 <li id="actuMensajero">Actualizar </li>
-					 <li id="buscarMensajero">Buscar </li>
-					 <li id="eliminarMesajero">Eliminar </li>
-				</ul>
-			<button type="submit" class="btn btn-primary mb-2">Pedidos</button>
-			<button type="submit" class="btn btn-primary mb-2">Chat</button>
-			<button type="submit" class="btn btn-primary mb-2">Ayuda</button>
+			<div class="dropdown buttons">
+				<button class="btn btn-primary mb-2" id="menu1" data-toggle="dropdown">Mensajeros </button> 
+					<ul class="dropdown-menu" type="submit" role="menu" aria-labelledby="menu1"> 
+						 <li id="addMensajero">Agregar </li>
+						 <li id="actuMensajero">Actualizar </li>
+						 <li id="buscarMensajero">Buscar </li>
+						 <li id="eliminarMesajero">Eliminar </li>
+					</ul>
+			</div>
+			<div class="dropdown buttons">
+				<button class="btn btn-primary mb-2" id="menu1" data-toggle="dropdown">Pedidos </button> 
+					<ul class="dropdown-menu" type="submit" role="menu" aria-labelledby="menu1"> 
+						 <li id="addPedido">Crear</li>
+					</ul>
+			</div>
+			<div class="dropdown buttons">
+				<button type="submit" class="btn btn-primary mb-2"><a class="btn btn-primary mb-2" href="chat.html">Chat</a></button>
+			</div>
+			<div class="dropdown buttons">
+				<button type="submit" class="btn btn-primary mb-2">Ayuda</button>
+			</div>
 		</div>
 	</div>
-	
 	<div class="border-body rigth-side">
 		<div class="header">
 			<div class="title-blue">Gestión de pedidos</div> 
@@ -69,6 +81,15 @@
 						<div>Mensajero asignado</div>
 					</div>
 				</div>
+				<c:if test = "${not empty mensajero}">
+					<div draggable="true" ondragstart="Mensajeros.drag(event)" class="mensajero" id="mensajero2">
+						<div class="border-blue">
+							<div>Pedido 1</div>
+							<div>Fecha de pedido</div>
+							<div>Mensajero asignado</div>
+						</div>
+					</div>
+				</c:if>
 				<div draggable="true" ondragstart="Mensajeros.drag(event)" class="mensajero" id="mensajero3">
 					<div class="border-blue">
 						<div>Pedido 1</div>
@@ -88,7 +109,6 @@
 			</div>
 		</div>
 	</div>
-
 	<div id="popUp">
 		<div>
 			<select>
@@ -104,19 +124,18 @@
 		<div class="container">
 			<div class="form__top">
 				<h4>Registrar mensajero</h4>
-			</div>		
-			<form class="form__reg" action="">
-				<input class="input" type="text" placeholder="&#128100;  Nombre" required autofocus>
-				<input class="input" type="text" placeholder="&#128387;  Cédula" required>
-				<input class="input" type="text" placeholder="&#128504;  Placa" required>
-				<input class="input" type="email" placeholder="&#9993;  Email" required>
-				<input class="input" type="text" placeholder="&#128222;  Telefono" required>
-				<input class="input" type="text" placeholder="&#8962;  Dirección" required>
+			</div><!-- $("#askldñj").submit()-->
+			<form:form id="askldñj" modelAttribut="mensajero" class="form__reg" action="/mensajero_save_or_update">
+			
+				<form:input class="input" placeholder="&#128100;  Nombre" path="mensajero.nambre" />
+				<form:input class="input" placeholder="&#128387;  Cédula" path="mensajero.id"/>
+				<form:input class="input" placeholder="&#128504;  Placa" path="mensajero.placa"/>
+				<form:input class="input" placeholder="&#128222;  Telefono" path="mensajero.telefono"/>
 				<div class="btn__form">
-					<input class="btn__submit" type="submit" value="REGISTRAR">
-					<input class="btn__reset" type="reset" value="LIMPIAR">	
+					<input class="btn__submit" type="submit" value="Registrar">
+					<input class="btn__reset" type="reset" value="Limpiar">	
 				</div>
-			</form>
+			</form:form>
 		</div>
 	</div>
 	<!--Eliminar mensajeros -->
@@ -190,6 +209,48 @@
 				<input class="input" type="text" placeholder="&#128100;  Buscar" required autofocus>
 				<div class="btn__form">
 					<input class="btn__submit" type="submit" value="Buscar">
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- Formulario de registro de pedidos -->
+	<div id="popUpAddPedido">
+		<div class="container">
+			<div class="form__top">
+				<h4>Registrar pedido</h4>
+			</div>		
+			<form class="form__reg" action="">
+				<input class="input" type="text" placeholder="&#128100; Fecha" required autofocus>
+				<input class="input" type="text" placeholder="&#128387; Hora" required>
+				<input class="input" type="text" placeholder="&#128504; Id" required>
+				<input class="input" type="email" placeholder="&#128587; Mensajero" required>
+				<input class="input" type="text" placeholder="&#127828; Producto" required>
+				<input class="input" type="text" placeholder="&#128181;  Total" required>
+				<div class="btn__form">
+					<input class="btn__submit" type="submit" value="Registrar">
+					<input class="btn__reset" type="reset" value="Limpiar">	
+				</div>
+			</form>
+		</div>
+	</div>
+	<!--Asignar mensajeros -->
+	<div id="popUpAsignar">
+			<div class="container">
+			<div class="form__top">
+				<h4>Asignar mensajero</h4>
+			</div>		
+			<form class="form__reg" action="">
+				<div class="dropdown"> 
+				 <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Mensajeros 
+				 <span class="caret"></span></button> 
+					 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1"> 
+						 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Juan</a></li> 
+						 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Pedro</a></li> 
+						 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Luis</a></li>
+					</ul> 
+				</div> 
+				<div class="btn__form">
+					<input class="btn__submit" type="submit" value="Asignar">
 				</div>
 			</form>
 		</div>

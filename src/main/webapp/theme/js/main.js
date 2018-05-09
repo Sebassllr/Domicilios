@@ -3,12 +3,12 @@ let Mensajeros = {};
 $( document ).ready(function() {
 
 	Mensajeros.initializer = function(){
-		$('.mensajero').click(Mensajeros.popUp);
+		$('.mensajero').dblclick(Mensajeros.popUpAsignar);
 		$('#addMensajero').click(Mensajeros.popUpAdd);
 		$('#eliminarMesajero').click(Mensajeros.popUpDelate);
 		$('#actuMensajero').click(Mensajeros.popUpDate);
 		$('#buscarMensajero').click(Mensajeros.popUpSearch);
-		
+		$('#addPedido').click(Mensajeros.popUpAddPedido);
 	}
 
 	Mensajeros.allowDrop = function(ev) {
@@ -28,8 +28,8 @@ $( document ).ready(function() {
 	    ev.target.appendChild(document.getElementById(data));
 	}
 
-	Mensajeros.popUp = function(){
-		$('#popUpSearch').bPopup({
+	Mensajeros.popUpAsignar = function(){
+		$('#popUpAsignar').bPopup({
             speed: 650,
             transition: 'slideIn',
 	    	transitionClose: 'slideBack'
@@ -61,6 +61,13 @@ $( document ).ready(function() {
 	}
 	Mensajeros.popUpSearch = function(){
 		$('#popUpSearch').bPopup({
+            speed: 650,
+            transition: 'slideIn',
+	    	transitionClose: 'slideBack'
+        });
+	}
+	Mensajeros.popUpAddPedido = function(){
+		$('#popUpAddPedido').bPopup({
             speed: 650,
             transition: 'slideIn',
 	    	transitionClose: 'slideBack'

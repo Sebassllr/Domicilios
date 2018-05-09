@@ -78,17 +78,22 @@ body{
 #popUp{
 	display: none; 
 	background: #ffffff;
-	height: 300px;
-	width: 200px;
-	padding: 5px;
+	width: 457px;
 }
 #popUpAdd{
 	display: none; 
 	background: #ffffff;
-	height: 580px;
-	width: 500px;
-	padding: 5px;
-}/*
+	width: 457px;
+}
+#popUpAddPedido{
+	display: none; 
+	background: #ffffff;
+	width: 457px;
+}
+.btn {
+	display: initial !important;
+}
+/*
 li:hover{
 	font-size: 40px;
 	padding-bottom: 50px;
@@ -120,19 +125,17 @@ li:hover{
 	text-align: center;
 }
 .container {
-	max-width: 450px;
 	height: auto;
-	background-color: #EFEFEF;
-	margin: 5% auto;
-	padding-bottom: 1rem;
-	
+	background-color: #EFEFEF;	
+	padding-right: 0 !important;
+    padding-left: 0 !important;
 }
 
 .form__top {
 	width: 100%;
 	text-align: center;
 	padding: 2rem 0 1rem;
-	border-top: solid .4rem #F39B53;
+	border-top: solid .3rem #F39B53;
 	margin-bottom: 1rem;
 }
 
@@ -147,7 +150,7 @@ h2 span {
 }
 
 .form__reg {
-	padding: 0 2rem;
+	padding: 9px 4rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -173,9 +176,9 @@ h2 span {
 }
 
 .btn__submit, .btn__reset {
-	width: 40%;
 	border-bottom: none;
 	background-color: #31B1E5;
+	margin-top: 30px;
 	color: white;
 }
 
@@ -199,13 +202,19 @@ h2 span {
 	padding-top: 7px;
 	font-family: 'Coiny', cursive;
 }
-#popUpAdd, #popUpDelate, #popUpDate, #popUpSearch{
+#popUpAdd, #popUpDelate, #popUpDate, #popUpSearch, #popUpAddPedido, #popUpAsignar{
 	display: none;
+	background: #ffffff;
+	width: 457px;
 }
 
 .border-blue{
 	padding: 10px;
 	padding-left: 20px;
+}
+.dropdown, .dropup {
+    text-align: center !important;
+    
 }
 
 .border-blue *{
@@ -216,7 +225,8 @@ h2 span {
 .buttons{
 	display: flex;
 	flex-direction: column;
-	padding: 20px;
+	margin-left: 20px;
+    margin-right: 20px
 }
 
 .modal-login a{
@@ -236,5 +246,9 @@ h2 span {
 }
 
 #eliminarMesajero{
+	font-size: 17px;
+}
+
+#addPedido{
 	font-size: 17px;
 }
