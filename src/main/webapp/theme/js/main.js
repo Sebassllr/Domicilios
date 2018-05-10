@@ -37,6 +37,20 @@ $( document ).ready(function() {
 	}
 
 	Mensajeros.popUpAdd = function(){
+		
+		$dialog = $('<div></div>').html('<iframe src="despachador"></iframe>').dialog({
+			autoOpen: false,
+			modal: true,
+			width: 500,
+			height: 500,
+			buttons:{
+				'guardar':{
+					text: "guardar"
+				}
+			}			
+		});
+		$dialog.dialog('open');
+		
 		$('#popUpAdd').bPopup({
             speed: 650,
             transition: 'slideIn',

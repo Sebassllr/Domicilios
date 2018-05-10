@@ -14,7 +14,10 @@ public class BaseController {
 
 	private static final String VIEW_INDEX = "index";
 	private final static org.slf4j.Logger logger = LoggerFactory.getLogger(BaseController.class);
-
+	
+	//@Autowired;
+	//private MensajeroService mensajeroService;
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome(ModelMap model) {
 		logger.info("Se carga la vista de Index");
@@ -42,13 +45,20 @@ public class BaseController {
 		if(!mensajero.getNombre().contains("@")) {
 			binding.reject(	"mensajero.email", ":c");
 		}
+		//String hql = "From mensajero";
+		//Query query = new Query(hql);
+		//List<Object> mensajeros = query.list();
+		//return query.list();
 		
+		//model.addAttribute("listaMensajeros", getMensajeros());
 		if(binding.hasErrors()) {
 			model.addAttribute("fallo","No fue correcto");
 			model.addAttribute("mensajero", mensajero);
 			
 			return "chat";
 		}
+		
+		
 		
 		//Guarda
 		

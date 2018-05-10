@@ -11,8 +11,7 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:component-scan base-package="com.domicilios.controller" />
-	<context:component-scan base-package="com.domicilios.entities" />
-	
+
 	
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
