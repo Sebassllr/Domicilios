@@ -21,7 +21,9 @@
     <script src="${boostrapJs}"></script>
     <script src="${bpopup}"></script>
     <script src="${mainJs}"></script>
-		
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.iframetracker/1.1.0/jquery.iframetracker.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+	
 	<!-- Estilos -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -29,7 +31,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+	
 	<link href="${main}" rel="stylesheet" />
+	
 <body>
 <div class="border-body left-side">
 		<div class="logo-img">
@@ -125,17 +129,7 @@
 			<div class="form__top">
 				<h4>Registrar mensajero</h4>
 			</div><!-- $("#askldñj").submit()-->
-			<form:form id="askldñj" modelAttribut="mensajero" class="form__reg" action="/mensajero_save_or_update">
-			
-				<form:input class="input" placeholder="&#128100;  Nombre" path="mensajero.nambre" />
-				<form:input class="input" placeholder="&#128387;  Cédula" path="mensajero.id"/>
-				<form:input class="input" placeholder="&#128504;  Placa" path="mensajero.placa"/>
-				<form:input class="input" placeholder="&#128222;  Telefono" path="mensajero.telefono"/>
-				<div class="btn__form">
-					<input class="btn__submit" type="submit" value="Registrar">
-					<input class="btn__reset" type="reset" value="Limpiar">	
-				</div>
-			</form:form>
+
 		</div>
 	</div>
 	<!--Eliminar mensajeros -->
@@ -243,6 +237,7 @@
 				<div class="dropdown"> 
 				 <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Mensajeros 
 				 <span class="caret"></span></button> 
+				 	<form:input type="combo" path="${listaMensajeros}" item="${listaMensajeros.nombre}"/>
 					 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1"> 
 						 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Juan</a></li> 
 						 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Pedro</a></li> 

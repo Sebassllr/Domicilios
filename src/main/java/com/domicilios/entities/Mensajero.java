@@ -1,10 +1,7 @@
 package com.domicilios.entities;
 
-import com.sun.istack.internal.NotNull;
-
 public class Mensajero {
 	
-	@NotNull
 	private Long id;
 	
 	private  String nombre;
@@ -12,13 +9,16 @@ public class Mensajero {
 	private String telefono;
 	
 	private String placa;
+	
+	private String apellido;
 
-	public Mensajero(Long id, String nombre, String telefono, String placa) {
+	public Mensajero(Long id, String nombre, String telefono, String placa, String apellido) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.telefono = telefono;
 		this.placa = placa;
+		this.apellido = apellido;
 	}
 	
 	public Mensajero() {}
@@ -54,5 +54,10 @@ public class Mensajero {
 	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
+	
+	public String getNomCompleto() {
+		return nombre + apellido; 
+	}
+
 	
 }
