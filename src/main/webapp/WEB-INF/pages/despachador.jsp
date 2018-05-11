@@ -31,12 +31,17 @@
 	<link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 	<link href="${main}" rel="stylesheet" />
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
 <body>
 <div class="border-body left-side">
 		<div class="logo-img">
 			<div class="title"></div>
 		</div>
-		<div class ="buttons">
+		<div  class="btn-group">
 			<div class="dropdown buttons">
 				<button class="btn btn-primary mb-2" id="menu1" data-toggle="dropdown">Mensajeros </button> 
 					<ul class="dropdown-menu" type="submit" role="menu" aria-labelledby="menu1"> 
@@ -46,7 +51,7 @@
 						 <li id="eliminarMesajero">Eliminar </li>
 					</ul>
 			</div>
-			<div class="dropdown buttons">
+			<div classs="dropdown buttons">
 				<button class="btn btn-primary mb-2" id="menu1" data-toggle="dropdown">Pedidos </button> 
 					<ul class="dropdown-menu" type="submit" role="menu" aria-labelledby="menu1"> 
 						 <li id="addPedido">Crear</li>
