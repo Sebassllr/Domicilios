@@ -1,7 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <title>Mr Chessse</title>
@@ -20,7 +19,6 @@
   	<link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
   	
 </head>
-
 <body>
     <div class="header">
         <div class="title-blue">Conéctate...
@@ -47,7 +45,7 @@
 				<textarea  id="mensaje" class="_twemoji_input" rows="7"></textarea>
 				<p class="_disclaimer"><img class="emoji" src="https://twemoji.maxcdn.com/36x36/1f64c.png"> Envia tú mensaje <img class="emoji" src="https://twemoji.maxcdn.com/36x36/1f30d.png"></p>
 			</div>
-			<button  class="_huge load_more_msgs"><a class="btn btn-primary mb-2" href="despachador.html">Volver</a><img src="https://twemoji.maxcdn.com/36x36/1f447.png" class="emoji"></button>
+			<button class="_huge load_more_msgs"><a class="btn btn-primary mb-2" href="despachador.html">Volver</a><img src="https://twemoji.maxcdn.com/36x36/1f447.png" class="emoji"></button>
 		</div>
 	</div>
 <script src='http://twemoji.maxcdn.com/twemoji.min.js'></script>
@@ -64,8 +62,8 @@
       storageBucket: "despachadordb.appspot.com",
       messagingSenderId: "341989072839"
     };
+    
     firebase.initializeApp(config);
-
     var txtNom = document.getElementById('nombre');
     var txtMensaje = document.getElementById('mensaje');
     var btnEnviar = document.getElementById('btnEnviar');
@@ -74,14 +72,12 @@
     btnEnviar.addEventListener("click", function(){
       var nom = "Despachador";
       var mensaje = txtMensaje.value;
-      //alert(nom);
 
       firebase.database().ref('chat').push({
         name: nom,
         message: mensaje
 
       });
-
     });
 
     firebase.database().ref('chat')
@@ -98,5 +94,4 @@
 
    </script> 
 </body>
-
 </html>

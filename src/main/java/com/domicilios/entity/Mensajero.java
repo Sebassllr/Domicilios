@@ -9,18 +9,29 @@ public class Mensajero {
 	
 	private  String nombre;
 	
+	private  String apellido;
+	
 	private String telefono;
 	
 	private String placa;
 
-	public Mensajero(Long id, String nombre, String telefono, String placa) {
+	public Mensajero(Long id, String nombre, String telefono, String placa, String apellido) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.telefono = telefono;
 		this.placa = placa;
+		this.apellido = apellido;
 	}
 	
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
 	public Mensajero() {}
 	
 	public Long getId() {
