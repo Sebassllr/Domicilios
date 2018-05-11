@@ -30,7 +30,6 @@
     </div>
 	<div class="content __wait">
 	 	<div class="links"> 
-	 		<svg> 
 	 			<g> 
 	 				<path d="M11.8,17.7c-0.4,0.1-0.6-0.2-0.6-0.4c0-0.3,0-1.2,0-2.4c0-0.8-0.3-1.3-0.6-1.6c1.9-0.2,3.9-0.9,3.9-4.2 
 	 					c0-0.9-0.3-1.7-0.9-2.3c0.1-0.2,0.4-1.1-0.1-2.3c-0.7-0.2-2.4,0.9-2.4,0.9c-0.7-0.2-1.4-0.3-2.1-0.3S7.6,5.3,6.9,5.5 
@@ -45,7 +44,7 @@
 		<div class="_secondary">
 			<div class="form">
 				<button id="btnEnviar" class="">Enviar</button>
-				<input id="nombre" placeholder="Ingresa tú nombre...">
+				<input id="nombre" placeholder="Ingresa tú mensaje...">
 				<textarea  id="mensaje" class="_twemoji_input" rows="7"></textarea>
 				<p class="_disclaimer"><img class="emoji" src="https://twemoji.maxcdn.com/36x36/1f64c.png"> Envia tú mensaje <img class="emoji" src="https://twemoji.maxcdn.com/36x36/1f30d.png"></p>
 			</div>
@@ -74,7 +73,7 @@
     var chatUl = document.getElementById('chatUl');
 
     btnEnviar.addEventListener("click", function(){
-      var nom = txtNom.value;
+      var nom = "Despachador";
       var mensaje = txtMensaje.value;
       //alert(nom);
 
