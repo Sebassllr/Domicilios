@@ -34,8 +34,8 @@
 	</head>
 	<body>
 	
- 			<form:form id="addMensajero" modelAttribut="mensajero" class="form__reg" action="/mensajero_save_or_update" > 		
- 				<form:input class="input" placeholder="&#128100;  Nombre" path="mensajero.nambre" /> 
+ 			<form:form id="addMensajero" modelAttribut="mensajero" class="form__reg"> 		
+ 				<form:input class="input" placeholder="&#128100;  Nombre" path="mensajero.nombre"/> 
  				<form:input class="input" placeholder="&#128387;  Cédula" path="mensajero.id"/> 
  				<form:input class="input" placeholder="&#128504;  Placa" path="mensajero.placa"/> 
  				<form:input class="input" placeholder="&#128222;  Telefono" path="mensajero.telefono"/> 

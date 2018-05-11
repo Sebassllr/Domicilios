@@ -6,7 +6,7 @@ $( document ).ready(function() {
 		$('.mensajero').dblclick(Mensajeros.popUpAsignar);
 		$('#addMensajero').click(Mensajeros.popUpAdd);
 		$('#eliminarMesajero').click(Mensajeros.popUpDelete);
-		$('#actuMensajero').click(Mensajeros.popUpDate);
+		$('#updateMensajero').click(Mensajeros.popUpDate);
 		$('#buscarMensajero').click(Mensajeros.popUpSearch);
 		$('#addPedido').click(Mensajeros.popUpAddPedido);
 	}
@@ -38,7 +38,7 @@ $( document ).ready(function() {
 	}
 
 	Mensajeros.popUpAdd = function(){
-		$dialog = $('<div></div>').html('<iframe src="chat" class=""><iframe>').dialog({
+		$dialog = $('<div></div>').html('<iframe src="formAgregarMensajero" class=""><iframe>').dialog({
 			autoOpen: false,
 			modal: true,
 			height: 500,
@@ -67,7 +67,7 @@ $( document ).ready(function() {
 	}
 	
 	Mensajeros.popUpDelete = function(){
-		$dialog = $('<div></div>').html('<iframe src="chat" class=""><iframe>').dialog({
+		$dialog = $('<div></div>').html('<iframe src="formEliminarMensajero" class=""><iframe>').dialog({
 			autoOpen: false,
 			modal: true,
 			height: 500,
@@ -95,11 +95,11 @@ $( document ).ready(function() {
 	}
 	
 	Mensajeros.popUpDate = function(){
-		$dialog = $('<div></div>').html('<iframe src="chat" class=""><iframe>').dialog({
+		$dialog = $('<div></div>').html('<iframe src="formActualizarMensajero" class=""><iframe>').dialog({
 			autoOpen: false,
 			modal: true,
-			height: 500,
-			width: 500,
+			height: 1000,
+			width: 1000,
 			buttons:{
 				"Actualizar" : {
 					text: 'Actualizar',
@@ -123,7 +123,7 @@ $( document ).ready(function() {
 	}
 	
 	Mensajeros.popUpSearch = function(){
-		$dialog = $('<div></div>').html('<iframe src="chat" class=""><iframe>').dialog({
+		$dialog = $('<div></div>').html('<iframe src="formBuscarMensajero" class=""><iframe>').dialog({
 			autoOpen: false,
 			modal: true,
 			height: 500,
@@ -151,7 +151,7 @@ $( document ).ready(function() {
 	}
 	
 	Mensajeros.popUpAddPedido = function(){
-		$dialog = $('<div></div>').html('<iframe src="chat" class=""><iframe>').dialog({
+		$dialog = $('<div></div>').html('<iframe src="formAgregarPedido" class=""><iframe>').dialog({
 			autoOpen: false,
 			modal: true,
 			height: 500,
