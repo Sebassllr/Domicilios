@@ -119,7 +119,7 @@
 			</select>
 		</div>
 	</div>
-	<!-- Formulario de registro de mensajeros -->
+	<%-- <!-- Formulario de registro de mensajeros -->
 	<div id="popUpAdd">
 		<div class="container">
 			<div class="form__top">
@@ -233,7 +233,7 @@
 				</div>
 			</form>
 		</div>
-	</div>
+	</div> --%>
 	<!--Asignar mensajeros -->
 	<div id="popUpAsignar">
 			<div class="container">
