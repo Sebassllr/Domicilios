@@ -1,10 +1,15 @@
 package com.domicilios.entity;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "Mensajero")
 public class Mensajero {
-
+	
+	
+	@Id
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private  String nombre;
