@@ -40,7 +40,7 @@
 			<div class="form__top">
 			<h4>Buscar mensajero</h4>
 			</div>		
-			<form:form id="searchMensajero" modelAttribut="mensajero" class="form__bus" action="/mensajero_save_or_update"">
+			<form:form id="searchMensajero" modelAttribute="mensajero" class="form__bus" action="/mensajero_save_or_update"">
 				<div class="dropdown"> 
 				 <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Filtro 
 				 <span class="caret"></span></button> 
@@ -57,7 +57,6 @@
 			</form:form>
 		</div>
 	</div>
-	
 </body>
 
 </html>

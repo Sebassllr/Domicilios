@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -30,19 +31,12 @@ public class BaseController {
 	@RequestMapping(value = "/despachador", method = RequestMethod.GET)
 	public String mainPage(ModelMap model) {
 		logger.info("Se carga la vista de despachador");
-		model.addAttribute("mensajero", new Mensajero());
 		return "despachador";
 	}
 	
 	@RequestMapping(value = "/chat", method = RequestMethod.GET)
 	public String chatPage(ModelMap model) {
 		logger.info("Se carga la vista de despachador");
-		return "chat";
-	}
-	
-	@RequestMapping(value = "/mensajero_save_or_update", method = RequestMethod.POST)
-	public String saveMensajero(ModelMap model, Mensajero mensajero, BindingResult binding) {
-		logger.info("Se carga la vista de despachador");		
 		return "chat";
 	}
 	
@@ -55,6 +49,7 @@ public class BaseController {
 	@RequestMapping(value = "/formAgregarMensajero", method = RequestMethod.GET)
 	public String agregarMenPage(ModelMap model) {
 		logger.info("Se carga la vista de agregar mensajero");
+		model.addAttribute("mensajero", new Mensajero());
 		return "formAgregarMensajero";
 	}
 	
@@ -74,5 +69,13 @@ public class BaseController {
 	public String agregarPedPage(ModelMap model) {
 		logger.info("Se carga la vista de agregar pedido");
 		return "formAgregarPedido";
+	}
+	
+	
+	@RequestMapping(value = "/mensajero_save_or_update", method = RequestMethod.POST)
+	public String saveOrUpdate(@ModelAttribute Mensajero mensajero, BindingResult bindingResult, ModelMap model) {
+		logger.info("Se procede a guardar el mensajero");
+		
+		return "chat";
 	}
 }

@@ -252,3 +252,18 @@ h2 span {
 #addPedido{
 	font-size: 17px;
 }
+.ui-dialog-titlebar{
+	display: none;
+}
+#ui-id-1{
+	height: fit-content !important;
+}
+.ui-dialog-buttonset{
+	display: flex;
+	background: gray;
+}
+.ui-dialog-buttonset button{
+	flex: 1; 
+	justify-content: center;
+	align-content: center;
+}

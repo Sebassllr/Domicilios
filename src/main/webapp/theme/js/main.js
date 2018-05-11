@@ -1,7 +1,9 @@
-let Mensajeros = {};
+var Mensajeros = {};
 
-$( document ).ready(function() {
+(function() {
 
+	Mensajeros.saveOrUpdateForm = "";
+	
 	Mensajeros.initializer = function(){
 		$('.mensajero').dblclick(Mensajeros.popUpAsignar);
 		$('#addMensajero').click(Mensajeros.popUpAdd);
@@ -37,7 +39,7 @@ $( document ).ready(function() {
 	}
 
 	Mensajeros.popUpAdd = function(){
-		$dialog = $('<div></div>').html('<iframe src="formAgregarMensajero" class=""><iframe>').dialog({
+		$dialog = $('<div></div>').html('<iframe id="addFrame" src="formAgregarMensajero" class=""><iframe>').dialog({
 			autoOpen: false,
 			modal: true,
 			height: 500,
@@ -45,8 +47,16 @@ $( document ).ready(function() {
 			buttons:{
 				"Guardar" : {
 					text: 'Guardar',
+					'class': 'btn__submit',
 					click: function(){
-						alert("Funciono Valen :D");
+						Mensajeros.saveOrUpdateForm.submit();
+					}
+				},
+				"Cancelar" : {
+					text: 'Cancelar',
+					'class': 'btn__reset',
+					click: function(){
+						$(this).dialog('close');
 					}
 				}
 			},
@@ -54,15 +64,9 @@ $( document ).ready(function() {
 				console.log('bai :c');
 			}
 		});
-		
+
 		$dialog.dialog('open');
 		return $dialog;
-		
-//		$('#popUpAdd').bPopup({
-//            speed: 650,
-//            transition: 'slideIn',
-//	    	transitionClose: 'slideBack'
-//        });
 	}
 	
 	Mensajeros.popUpDelete = function(){
@@ -177,7 +181,7 @@ $( document ).ready(function() {
 	    	transitionClose: 'slideBack'
         });*/
 	}
-});
+})();
 
 $(function(){
 	Mensajeros.initializer();
