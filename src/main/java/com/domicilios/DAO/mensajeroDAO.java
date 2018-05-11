@@ -42,7 +42,7 @@ public class mensajeroDAO {
         Session session = this.sessionFactory.getCurrentSession();
         List<Mensajero> mensajeroList = session.createQuery("from Mensajero").list();
         for (Mensajero mensaj : mensajeroList) {
-            logger.info("Phone List::" + mensaj);
+            logger.info("Mensajero List::" + mensaj);
         }
         return mensajeroList;
     }
