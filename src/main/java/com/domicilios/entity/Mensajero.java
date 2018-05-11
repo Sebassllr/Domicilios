@@ -1,10 +1,10 @@
-package com.domicilios.entities;
+package com.domicilios.entity;
 
-import com.sun.istack.internal.NotNull;
+import javax.persistence.Entity;
 
+@Entity
 public class Mensajero {
-	
-	@NotNull
+
 	private Long id;
 	
 	private  String nombre;

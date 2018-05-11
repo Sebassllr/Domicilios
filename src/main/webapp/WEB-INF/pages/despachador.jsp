@@ -61,8 +61,8 @@
 	</div>
 	<div class="border-body rigth-side">
 		<div class="header">
-			<div class="title-blue">Gesti髇 de pedidos</div> 
-			<div class="blue-content">M骴ulo de gesti髇 y administraci髇 de pedidos y mensajeros.</div>
+			<div class="title-blue">Gesti贸n de pedidos</div> 
+			<div class="blue-content">M贸dulo de gesti贸n y administraci贸n de pedidos y mensajeros.</div>
 		</div>
 		<div class="rigth-side-content">
 			<div class="lane lbl" id="firstLane" ondrop="Mensajeros.drop(event)" ondragover="Mensajeros.allowDrop(event)">
@@ -124,18 +124,8 @@
 		<div class="container">
 			<div class="form__top">
 				<h4>Registrar mensajero</h4>
-			</div><!-- $("#askld駄").submit()-->
-			<form:form id="askld駄" modelAttribut="mensajero" class="form__reg" action="/mensajero_save_or_update">
-			
-				<form:input class="input" placeholder="&#128100;  Nombre" path="mensajero.nambre" />
-				<form:input class="input" placeholder="&#128387;  C閐ula" path="mensajero.id"/>
-				<form:input class="input" placeholder="&#128504;  Placa" path="mensajero.placa"/>
-				<form:input class="input" placeholder="&#128222;  Telefono" path="mensajero.telefono"/>
-				<div class="btn__form">
-					<input class="btn__submit" type="submit" value="Registrar">
-					<input class="btn__reset" type="reset" value="Limpiar">	
-				</div>
-			</form:form>
+			</div><!-- $("#askld帽j").submit()-->
+
 		</div>
 	</div>
 	<!--Eliminar mensajeros -->
@@ -179,11 +169,11 @@
 				 </ul> 
 				</div> 
 				<input class="input" type="text" placeholder="&#128100;  Nombre" required autofocus>
-				<input class="input" type="text" placeholder="&#128387;  C閐ula" required>
+				<input class="input" type="text" placeholder="&#128387;  C茅dula" required>
 				<input class="input" type="text" placeholder="&#128504;  Placa" required>
 				<input class="input" type="email" placeholder="&#9993;  Email" required>
 				<input class="input" type="text" placeholder="&#128222;  Telefono" required>
-				<input class="input" type="text" placeholder="&#8962;  Direcci髇" required>
+				<input class="input" type="text" placeholder="&#8962;  Direcci贸n" required>
 				<div class="btn__form">
 					<input class="btn__submit" type="submit" value="Actualizar">
 				</div>
@@ -201,7 +191,7 @@
 				 <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Filtro 
 				 <span class="caret"></span></button> 
 				 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1"> 
-					 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">C閐ula</a></li> 
+					 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">C茅dula</a></li> 
 					 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Nombre</a></li> 
 					 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Placa</a></li>  
 				 </ul> 
@@ -213,6 +203,17 @@
 			</form>
 		</div>
 	</div>
+	<form:form method="POST" id="myForm" modelAttribute="mensajero" class="form__reg" action="/mensajero_save_or_update">
+	
+		<form:input class="input" path="nombre" />
+		<form:input class="input" path="id"/>
+		<form:input class="input" path="placa"/>
+		<form:input class="input" path="telefono"/>
+		<div class="btn__form">
+			<input class="btn__submit" type="submit" value="Registrar">
+			<input class="btn__reset" type="reset" value="Limpiar">	
+		</div>
+	</form:form>
 	<!-- Formulario de registro de pedidos -->
 	<div id="popUpAddPedido">
 		<div class="container">
