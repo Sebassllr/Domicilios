@@ -22,7 +22,11 @@
 </head>
 
 <body>
-
+    <div class="header">
+        <div class="title-blue">Conéctate...
+        <img class="img" ></div>
+        <hr>
+    </div>
 	<div class="content __wait">
 	 	<div class="links"> 
 	 		<svg> 
