@@ -337,3 +337,19 @@ button._huge.load_more_msgs {
   padding: 10px;
   margin-top: 40px;
 }
+
+
+.header .title-blue{
+	font-size: 45px;
+	background: none;
+	color: #e8a509;
+	font-weight: 600;
+	font-family: 'Open Sans Condensed', sans-serif;
+	display: flex;
+    justify-content: center;
+}
+
+.img{
+	background: url(../img/log2.png) no-repeat;
+	background-size: 320px 300px;
+}
