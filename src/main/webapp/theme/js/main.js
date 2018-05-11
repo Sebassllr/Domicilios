@@ -37,41 +37,145 @@ $( document ).ready(function() {
 	}
 
 	Mensajeros.popUpAdd = function(){
-		$('#popUpAdd').bPopup({
-            speed: 650,
-            transition: 'slideIn',
-	    	transitionClose: 'slideBack'
-        });
+		$dialog = $('<div></div>').html('<iframe src="formAgregarMensajero" class=""><iframe>').dialog({
+			autoOpen: false,
+			modal: true,
+			height: 500,
+			width: 500,
+			buttons:{
+				"Guardar" : {
+					text: 'Guardar',
+					click: function(){
+						alert("Funciono Valen :D");
+					}
+				}
+			},
+			close: function(){
+				console.log('bai :c');
+			}
+		});
+		
+		$dialog.dialog('open');
+		return $dialog;
+		
+//		$('#popUpAdd').bPopup({
+//            speed: 650,
+//            transition: 'slideIn',
+//	    	transitionClose: 'slideBack'
+//        });
 	}
 	
-	Mensajeros.popUpDelate = function(){
-		$('#popUpDelate').bPopup({
+	Mensajeros.popUpDelete = function(){
+		$dialog = $('<div></div>').html('<iframe src="formEliminarMensajero" class=""><iframe>').dialog({
+			autoOpen: false,
+			modal: true,
+			height: 500,
+			width: 500,
+			buttons:{
+				"Eliminar" : {
+					text: 'Eliminar',
+					click: function(){
+						alert("Eliminado.");
+					}
+				}
+			},
+			close: function(){
+				console.log('bai :c');
+			}
+		});
+		
+		$dialog.dialog('open');
+		return $dialog;
+		/*$('#popUpDelete').bPopup({
             speed: 650,
             transition: 'slideIn',
 	    	transitionClose: 'slideBack'
-        });
+        });*/
 	}
 	
 	Mensajeros.popUpDate = function(){
-		$('#popUpDate').bPopup({
+		$dialog = $('<div></div>').html('<iframe src="formActualizarMensajero" class=""><iframe>').dialog({
+			autoOpen: false,
+			modal: true,
+			height: 1000,
+			width: 1000,
+			buttons:{
+				"Actualizar" : {
+					text: 'Actualizar',
+					click: function(){
+						alert("Actualizado.");
+					}
+				}
+			},
+			close: function(){
+				console.log('bai :c');
+			}
+		});
+		
+		$dialog.dialog('open');
+		return $dialog;
+		/*$('#popUpDate').bPopup({
             speed: 650,
             transition: 'slideIn',
 	    	transitionClose: 'slideBack'
-        });
+        });*/
 	}
+	
 	Mensajeros.popUpSearch = function(){
-		$('#popUpSearch').bPopup({
+		$dialog = $('<div></div>').html('<iframe src="formBuscarMensajero" class=""><iframe>').dialog({
+			autoOpen: false,
+			modal: true,
+			height: 500,
+			width: 500,
+			buttons:{
+				"Buscar" : {
+					text: 'Buscar',
+					click: function(){
+						alert("Buscado.");
+					}
+				}
+			},
+			close: function(){
+				console.log('bai :c');
+			}
+		});
+		
+		$dialog.dialog('open');
+		return $dialog;
+		/*$('#popUpSearch').bPopup({
             speed: 650,
             transition: 'slideIn',
 	    	transitionClose: 'slideBack'
-        });
+        });*/
 	}
+	
 	Mensajeros.popUpAddPedido = function(){
-		$('#popUpAddPedido').bPopup({
+		$dialog = $('<div></div>').html('<iframe src="formAgregarPedido" class=""><iframe>').dialog({
+			autoOpen: false,
+			modal: true,
+			height: 500,
+			width: 500,
+			buttons:{
+				"Guardar" : {
+					text: 'Guardar',
+					click: function(){
+						alert("Guardado.");
+					}
+				}
+			},
+			close: function(){
+				console.log('bai :c');
+			}
+		});
+		
+		$dialog.dialog('open');
+		return $dialog;
+		
+		/*$('#popUpAddPedido').bPopup({
             speed: 650,
             transition: 'slideIn',
 	    	transitionClose: 'slideBack'
-        });
+        });*/
 	}
 });
 
