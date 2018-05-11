@@ -152,8 +152,8 @@ textarea._twemoji_input{
 
 body{
 	min-height: 100vh ;
-	background: #FABD4A;
-  min-width: 480px;
+	background: #3475f1;
+  	min-width: 480px;
 	font-family: 'Open Sans', helvetica, sans-serif;
 	margin: 0;
 	padding: 0;
@@ -164,6 +164,9 @@ body{
 	outline: none;
 }
 
+div.header{
+	background: #ffff;
+}
 
 h1, h2, h3, h4, h5, h6{
 	font-family: 'Amatic SC', cursive;
