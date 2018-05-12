@@ -67,36 +67,12 @@
 		      database.ref().child('mensajero').push().key
 		      database.ref('mensajero/' + id).set({
 		        nombre,
-		        precio,
-		        descripcion,
-		        visible
+		        apellido,
+		        id,
+		        placa,
+		        telefono
 		      })
-		    })
-		    
-		  let txtNom = document.getElementById('nombre');
-		  let txtApellido = document.getElementById('apellido');
-		  let txtId = document.getElementById('id');
-		  let txtPlaca = document.getElementById('placa');
-		  let txtTelefono = document.getElementById('telefono');
-		  let btnEnviar = document.getElementById('btnEnviar');
-
-		  btnEnviar.addEventListener("click", function(){
-		    let nom = txtNom.value;
-		    let apellido = txtApellido.value;
-		    let id = txtId.value;
-		    let placa = txtPlaca.value;
-		    let telefono = txtTelefono.value;
-
-		  firebase.database().ref('mensajero').push({
-		        nombre: nom,
-		        apellido: apellido,
-		        id: id,
-		        placa: placa,
-		        telefono: telefono
-		      });
-		   });
-		  
-		  
+		    })		  
     </script>
 	</body>
 </html>
