@@ -152,7 +152,11 @@ textarea._twemoji_input{
 
 body{
 	min-height: 100vh ;
+<<<<<<< HEAD
 	background: #FABD4A;
+=======
+	background: #3475f1;
+>>>>>>> 97e5c9ef1369632a75d56ac3a7ac17a0b7dec713
   	min-width: 480px;
 	font-family: 'Open Sans', helvetica, sans-serif;
 	margin: 0;
