@@ -15,6 +15,7 @@ function autentificar(event){
 	firebase.auth().signInWithEmailAndPassword(user, pss)
 		.then(function(result){
 			alert("Usuario valido");
+			window.location.href = "despachador.html"
 		})
 		.catch(function(error){
 			alert("Usuario incorrecto");

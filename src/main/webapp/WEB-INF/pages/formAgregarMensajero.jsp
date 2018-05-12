@@ -55,6 +55,24 @@
 		  };
 		 
 		  firebase.initializeApp(config);
+		  		  
+		  let form = document.getElementById('saveMensajero')
+		    form.addEventListener('submit', event => {
+		      event.preventDefault()
+		      let nombre = document.querySelector('#nombre').value
+		      let apellido = document.querySelector('#apellido').value
+		      let id = document.querySelector('#id').value
+		      let placa = document.querySelector('#placa').value
+		      let placa = document.querySelector('#telefono').value
+		      database.ref().child('mensajero').push().key
+		      database.ref('mensajero/' + id).set({
+		        nombre,
+		        precio,
+		        descripcion,
+		        visible
+		      })
+		    })
+		    
 		  let txtNom = document.getElementById('nombre');
 		  let txtApellido = document.getElementById('apellido');
 		  let txtId = document.getElementById('id');

@@ -9,10 +9,16 @@ const config = {
 
 firebase.initializeApp(config)
 let database = firebase.database()
-let objects = [], mensajero = [], pedido = []
 
-database.ref('mensajero').on('child_added', snapshot => {
-  let child = snapshot.val()
-  child['id'] = snapshot.key
-  mensajero.push(child)
-})
+function deleteFirebase(id) {
+  database.ref().child('mensajero/' + id).remove();
+}
+
+function updateFirebase(id, nom, ape, placa, tele) {
+  database.ref('mensajero/' + id).update({
+    nom: nom,
+    apellido: ape,
+    placa: placa,
+    tele: tele
+  })
+}

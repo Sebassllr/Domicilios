@@ -36,7 +36,7 @@ public class BaseController {
 	
 	@RequestMapping(value = "/chat", method = RequestMethod.GET)
 	public String chatPage(ModelMap model) {
-		logger.info("Se carga la vista de despachador");
+		logger.info("Se carga la vista de chat");
 		return "chat";
 	}
 	
