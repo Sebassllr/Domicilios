@@ -37,7 +37,6 @@
 	<body>
 	
 		<form:form enctype="multipart/form-data" method="POST" id="saveMensajero" modelAttribute="mensajero" class="form__reg" action="${mensajeroSave}">
-		
 			<form:input class="input" path="nombre" />
 			<form:input class="input" path="id"/>
 			<form:input class="input" path="placa"/>
