@@ -260,7 +260,7 @@ h2 span {
 }
 .ui-dialog-buttonset{
 	display: flex;
-	background: gray;
+	background: gray;	
 }
 .ui-dialog-buttonset button{
 	flex: 1; 

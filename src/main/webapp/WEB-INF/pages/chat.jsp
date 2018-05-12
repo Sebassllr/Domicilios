@@ -22,7 +22,8 @@
 <body>
     <div class="header">
         <div class="title-blue">Conéctate...
-        <img class="img" ></div>
+        	<img class="img" >
+        </div>
         <hr>
     </div>
 	<div class="content __wait">
@@ -37,7 +38,7 @@
 	 			</g> 
 	 		</svg> 
 	 	</div> 
-		<ul id="chatUl"></ul>
+		<ul id="chatUl" class="style-6"></ul>
 		<div class="_secondary">
 			<div class="form">
 				<button id="btnEnviar" class="">Enviar</button>
