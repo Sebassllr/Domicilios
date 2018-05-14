@@ -55,3 +55,18 @@ Despachador.listarMensajero = function(id){
     html += "<li>"+ nombre + ": "+ apellido +" </li>";
     mesajeroUl.innerHTML = html;
 }
+
+Despachador.listarMensajero1 = function(){
+	var mensajero = [];
+	var mensajero = firebase.database().ref('mensajero');
+	return pedidos.once('child_added').then(function(snapshot) {
+		var todos = snapshot.val();
+        return todos;
+    	var html = '';
+        html += "<li>"+ todos.nombre + ": "+ todos.apellido +" </li>";
+        mesajeroUl.innerHTML = html;
+        
+	}).catch(function(error){
+        alert('error:  ' + error);
+	});
+}

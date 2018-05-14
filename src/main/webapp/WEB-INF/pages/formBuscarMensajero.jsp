@@ -22,6 +22,11 @@
     <script src="${bpopup}"></script>
     <script src="${mainJs}"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>	
 	
 	<!-- Estilos -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -31,33 +36,20 @@
 	<link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 	<link href="${main}" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 	</head>
 	<body>
-	
- 			<!-- Buscar mensajeros -->
-	<div id="popUpSearch">
-		<div class="container">
-			<div class="form__top">
-			<h4>Buscar mensajero</h4>
-			</div>		
-			<form:form id="searchMensajero" class="form__bus" >
-				<div class="dropdown"> 
-				 <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Filtro 
-				 <span class="caret"></span></button> 
-				 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1"> 
-					 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Cédula</a></li> 
-					 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Nombre</a></li> 
-					 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Placa</a></li>  
-				 </ul> 
-				</div> 
-				<form:input class="input" type="text" placeholder="&#128100;  Buscar" path="telefono"/>
-				<div class="btn__form">
-					<input class="btn__submit" type="submit" value="Buscar">
-				</div>
-				<ul id="mensajerotUl" class="style-6"></ul>
-			</form:form>
-		</div>
-	</div>
+		<table id="dataTable">
+				  <thead>
+				       <tr>
+				       	   <th>Id</th>
+				           <th>Nombre</th>
+				           <th>Apellido</th>
+				           <th>Placa</th>
+				           <th>Telefono</th>
+				      </tr>
+				 </thead>
+		</table>
 </body>
 
 </html>

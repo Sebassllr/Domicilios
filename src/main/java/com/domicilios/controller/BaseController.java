@@ -71,28 +71,6 @@ public class BaseController {
 		return "formAgregarPedido";
 	}
 	
-	
-	@RequestMapping(value = "/mensajero_save_or_update", method = RequestMethod.POST)
-	public String saveOrUpdate(@ModelAttribute Mensajero mensajero, BindingResult bindingResult, ModelMap model) {
-		logger.info("Se procede a guardar el mensajero");
-		
-		return "chat";
-	}
-	
-	@RequestMapping(value = "/mensajero_save_or_update", method = RequestMethod.DELETE)
-	public String saveOrUpdate(@ModelAttribute Mensajero mensajero, BindingResult bindingResult, ModelMap model) {
-		logger.info("Se procede a guardar el mensajero");
-		
-		return "chat";
-	}
-	
-	@RequestMapping(value = "/mensajero_save_or_update", method = RequestMethod.GET)
-	public String saveOrUpdate(@ModelAttribute Mensajero mensajero, BindingResult bindingResult, ModelMap model) {
-		logger.info("Se procede a guardar el mensajero");
-		
-		return "chat";
-	}
-	
 	@RequestMapping(value = "/mensajero_save_or_update", method = RequestMethod.PUT)
 	public String saveOrUpdate(@ModelAttribute Mensajero mensajero, BindingResult bindingResult, ModelMap model) {
 		logger.info("Se procede a guardar el mensajero");
