@@ -10,7 +10,8 @@
 	<spring:url value="/resources/js/bootstrap.js" var="boostrapJs" />
 	<spring:url value="/resources/js/bPopUp.js" var="bpopup" />
 	<spring:url value="/resources/js/main.js" var="mainJs" />
-	    
+	<spring:url value="/resources/js/ajaxPost.js" var="ajaxPostJs" />
+	
     <!-- CNDS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -22,6 +23,8 @@
     <script src="${bpopup}"></script>
     <script src="${mainJs}"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	
+	<script src="${ajaxPostJs}"></script>
 	
 	<!-- Estilos -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -42,7 +45,7 @@
 			<div class="title"></div>
 		</div>
 		<div  class="btn-group">
-			<div class="dropdown buttons">
+			<!-- <div class="dropdown buttons">
 				<button class="btn btn-primary mb-2" id="menu1" data-toggle="dropdown">Mensajeros </button> 
 					<ul class="dropdown-menu" type="submit" role="menu" aria-labelledby="menu1"> 
 						 <li id="addMensajero">Agregar </li>
@@ -50,19 +53,29 @@
 						 <li id="buscarMensajero">Buscar </li>
 						 <li id="eliminarMesajero">Eliminar </li>
 					</ul>
+			</div> -->
+			<div class="dropdown buttons">
+				<button onclick="dropdownMensajero()" class="btn btn-primary mb-2" id="menu1" data-toggle="dropdown" class="dropbtn">Mensajeros</button>
+				<div id="myDropdown" class="dropdown-menu">
+					<a href="formAgregarMensajero">Agregar mensajero</a> <br>
+					<a href="formAgregarPedido"> Agregar pedido</a><br>
+					<a href="formAgregarMensajero">Actualizar mensajero</a>
+				</div>
 			</div>
-			<div classs="dropdown buttons">
-				<button class="btn btn-primary mb-2" id="menu1" data-toggle="dropdown">Pedidos </button> 
-					<ul class="dropdown-menu" type="submit" role="menu" aria-labelledby="menu1"> 
-						 <li id="addPedido">Crear</li>
-					</ul>
+
+			<div class="dropdown buttons">
+				<button onclick="dropdownMensajero2()"  class="btn btn-primary mb-2"  id="menu2" data-toggle="dropdown" class="dropbtn">Pedido</button>
+				<div id="myDropdown2" class="dropdown-menu">
+					<a href="formAgregarPedido">Crear pedido</a> 
+				</div>
 			</div>
 			<div class="dropdown buttons">
-				<button type="submit" class="btn btn-primary mb-2"><a class="btn btn-primary mb-2" href="chat.html">Chat</a></button>
+				<button id="chat" type="submit" class="btn btn-primary mb-2"><a class="btn btn-primary mb-2" href="chat.html">Chat</a></button>
 			</div>
 			<div class="dropdown buttons">
 				<button type="submit" class="btn btn-primary mb-2">Ayuda</button>
 			</div>
+			<div id="msg"> </div>
 		</div>
 	</div>
 	<div class="border-body rigth-side">

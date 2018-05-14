@@ -34,7 +34,6 @@
 		<link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 		<link href="${main}" rel="stylesheet" />
-	</head>
 	<body>
 	
 		<form:form enctype="multipart/form-data" method="POST" id="saveMensajero" modelAttribute="mensajero" class="form__reg" action="${mensajeroSave}">

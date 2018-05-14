@@ -24,7 +24,7 @@ $(document).ready(function() {
 	}
 	
 	function ajaxPut(){
-    	var formData = {
+    	var mensajero = {
     			id: $("#id").val(),
     			nombre : $("#nombre").val(),
     			placa : $("#placa").val(),
@@ -32,13 +32,13 @@ $(document).ready(function() {
     		   
     	}
     	
-    	console.log("formData before PUT: " + formData);
+    	console.log("mensajero before PUT: " + mensajero);
     	
     	$.ajax({
 			type : "PUT",
 			contentType : "application/json",
 			url : despachador,
-			data : JSON.stringify(formData),
+			data : JSON.stringify(mensajero),
 			dataType : 'json',
 			
 			// SUCCESS response
