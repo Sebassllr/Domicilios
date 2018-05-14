@@ -40,16 +40,14 @@
 			<div class="form__top">
 				<h4>Registrar pedido</h4>
 			</div>		
-			<form:form id="addPedido" modelAttribut="pedido" class="form__regPedido" action="/mensajero_save_or_update">
-				<form:input class="input"  placeholder="&#128100; Direccion" path="pedido.direccion"/>
-				<form:input class="input"  placeholder="&#128387; Fecha" path="pedido.fecha"/>
-				<form:input class="input"  placeholder="&#128504; Id" path="pedido.id"/>
-				<form:input class="input"  placeholder="&#128587; Mensajero" path="pedido.idMensajero"/>
-				<form:input class="input"  placeholder="&#127828; Producto" path="pedido.producto"/>
-				<form:input class="input"  placeholder="&#128587; Total" path="pedido.total"/>
-				<form:input class="input"  placeholder="&#127828; Cliente" path="pedido.cliente"/>
-				<form:input class="input"  placeholder="&#127828; Nombre Cliente" path="pedido.nombreCliente"/>
-				<form:input class="input"  placeholder="&#128181;  Id Cliente" path="pedido.idCliente"/>
+			<form:form id="addPedido" class="form__regPedido">
+				<form:input class="input"  placeholder="&#128100; Direccion" path="direccion" id="direccion"/>
+				<form:input class="input"  placeholder="&#128387; Fecha" path="fecha" id="fecha"/>
+				<form:input class="input"  placeholder="&#128504; Id" path="id" id="id"/>
+				<form:input class="input"  placeholder="&#127828; Producto" path="producto" id="producto"/>
+				<form:input class="input"  placeholder="&#128587; Total" path="total" id="total"/>
+				<form:input class="input"  placeholder="&#127828; Id cliente" path="cliente" id="cliente"/>
+				<form:input class="input"  placeholder="&#127828; Nombre cliente" path="nombreCliente" id="nombreCliente" />
 				<div class="btn__form">
 					<input class="btn__submit" type="submit" value="Registrar">
 					<input class="btn__reset" type="reset" value="Limpiar">	

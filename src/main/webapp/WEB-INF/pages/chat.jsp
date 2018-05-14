@@ -54,7 +54,6 @@
 
    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
    <script> 
-    // Initialize Firebase
     var config = {
       apiKey: "AIzaSyC2u0d1Ph7mUk4YvX98XgMqn-0SUGUwZqY",
       authDomain: "despachadordb.firebaseapp.com",

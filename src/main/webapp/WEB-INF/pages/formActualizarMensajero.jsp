@@ -41,27 +41,23 @@
 			<h4>Actualizar mensajero</h4>
 			</div>		
 			
-			<form:form id="updateMensajero" modelAttribut="mensajero" class="form__act" action="/mensajero_save_or_update">
+			<form:form id="updateMensajero" class="form__act">
 				<div class="dropdown"> 
 				 <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Mensajeros
 				 <span class="caret"></span></button> 
 				 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1"> 
-					 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li> 
-					 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li> 
-					 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li> 
+					 <li role="presentation"><a role="menuitem" tabindex="-1" >1216717413</a></li> 
+					 <li role="presentation"><a role="menuitem" tabindex="-1" >128989001</a></li> 
+					 <li role="presentation"><a role="menuitem" tabindex="-1" >123456432</a></li> 
 					 <li role="presentation" class="divider"></li> 
 					 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li> 
 				 </ul> 
 				</div> 
-				
-				<form:input class="input"  placeholder="&#128100;  Nombre" path="mensajero.nambre" />
-				<form:input class="input"  placeholder="&#128100;  Apellido" path="mensajero.apellido" />
-				<form:input class="input"  placeholder="&#128387;  Cédula" path="mensajero.id"/>
-				<form:input class="input"  placeholder="&#128504;  Placa" path="mensajero.placa"/>
-				<form:input class="input"  placeholder="&#128222;  Telefono" path="mensajero.telefono"/>
+				<form:input class="input"  placeholder="&#128504;  Placa" path="placa" id="placa"/>
+				<form:input class="input"  placeholder="&#128222;  Telefono" path="telefono"id="telefono"/>
 				
 				<div class="btn__form">
-					<input class="btn__submit" type="submit" value="Actualizar">
+					<input class="btn__submit" type="submit" value="Actualizar" onclick="Despachador.actualizarMensajero();" >
 				</div>
 			</form:form>
 		</div>

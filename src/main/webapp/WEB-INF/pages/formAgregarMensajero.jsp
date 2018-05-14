@@ -9,6 +9,7 @@
 		<spring:url value="/resources/js/jquery-3.3.1.min.js" var="jqueryJs" />
 		<spring:url value="/resources/js/bootstrap.js" var="boostrapJs" />
 		<spring:url value="/resources/js/bPopUp.js" var="bpopup" />
+		<spring:url value="/resources/js/despachador.js" var="despachadorJs" />
 		<spring:url value="/resources/js/mensajero_save_or_update.js" var="mainJs" />	
 		<spring:url var="mensajeroSave" value="/mensajero_save_or_update"></spring:url>
 		
@@ -20,8 +21,8 @@
 		<!-- Javasript -->
 	    <script src="${jqueryJs}"></script>
 	    <script src="${boostrapJs}"></script>
-	    <script src="${bpopup}"></script>
 	    <script src="${mainJs}"></script>
+	     <script src="${despachadorJs}"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		
 		<!-- Estilos -->
@@ -40,39 +41,9 @@
 			<form:input class="input" path="id" id="id"/>
 			<form:input class="input" path="placa" id="placa"/>
 			<form:input class="input" path="telefono" id="telefono"/>
-			<button id="btnEnviar" class="">Enviar</button>
+			<button id="btnEnviar" class="" onclick="Despachador.crearMensajero();">Enviar</button>
 		</form:form>
 		
 	<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-	<script>
-		 var config = {
-		      apiKey: "AIzaSyC2u0d1Ph7mUk4YvX98XgMqn-0SUGUwZqY",
-		      authDomain: "despachadordb.firebaseapp.com",
-		      databaseURL: "https://despachadordb.firebaseio.com",
-		      projectId: "despachadordb",
-		      storageBucket: "despachadordb.appspot.com",
-		      messagingSenderId: "341989072839"
-		  };
-		 
-		  firebase.initializeApp(config);
-		  		  
-		  let form = document.getElementById('saveMensajero')
-		    form.addEventListener('submit', event => {
-		      event.preventDefault()
-		      let nombre = document.querySelector('#nombre').value
-		      let apellido = document.querySelector('#apellido').value
-		      let id = document.querySelector('#id').value
-		      let placa = document.querySelector('#placa').value
-		      let placa = document.querySelector('#telefono').value
-		      database.ref().child('mensajero').push().key
-		      database.ref('mensajero/' + id).set({
-		        nombre,
-		        apellido,
-		        id,
-		        placa,
-		        telefono
-		      })
-		    })		  
-    </script>
 	</body>
 </html>

@@ -40,7 +40,7 @@
 			<div class="form__top">
 			<h4>Buscar mensajero</h4>
 			</div>		
-			<form:form id="searchMensajero" modelAttribute="mensajero" class="form__bus" action="/mensajero_save_or_update"">
+			<form:form id="searchMensajero" class="form__bus" >
 				<div class="dropdown"> 
 				 <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Filtro 
 				 <span class="caret"></span></button> 
@@ -50,10 +50,11 @@
 					 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Placa</a></li>  
 				 </ul> 
 				</div> 
-				<form:input class="input" type="text" placeholder="&#128100;  Buscar" path="mensajero.telefono"/>
+				<form:input class="input" type="text" placeholder="&#128100;  Buscar" path="telefono"/>
 				<div class="btn__form">
 					<input class="btn__submit" type="submit" value="Buscar">
 				</div>
+				<ul id="mensajerotUl" class="style-6"></ul>
 			</form:form>
 		</div>
 	</div>

@@ -42,8 +42,8 @@ var Mensajeros = {};
 		$dialog = $('<div></div>').html('<iframe id="addFrame" src="formAgregarMensajero" class=""><iframe>').dialog({
 			autoOpen: false,
 			modal: true,
-			height: 500,
-			width: 500,
+			height: 800,
+			width: 800,
 			buttons:{
 				"Guardar" : {
 					text: 'Guardar',
@@ -61,7 +61,7 @@ var Mensajeros = {};
 				}
 			},
 			close: function(){
-				console.log('bai :c');
+				console.log(':c');
 			}
 		});
 
@@ -76,6 +76,12 @@ var Mensajeros = {};
 			height: 500,
 			width: 500,
 			buttons:{
+				"Guardar" : {
+					text: 'Guardar',
+					'class': 'btn__submit',
+					click: function(){
+						Mensajeros.saveOrUpdateForm.submit();
+					},
 				"Eliminar" : {
 					text: 'Eliminar',
 					click: function(){
