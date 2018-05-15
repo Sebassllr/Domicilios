@@ -58,8 +58,9 @@
 				<button onclick="dropdownMensajero()" class="btn btn-primary mb-2" id="menu1" data-toggle="dropdown" class="dropbtn">Mensajeros</button>
 				<div id="myDropdown" class="dropdown-menu">
 					<a href="formAgregarMensajero">Agregar mensajero</a> <br>
-					<a href="formAgregarPedido"> Agregar pedido</a><br>
-					<a href="formAgregarMensajero">Actualizar mensajero</a>
+					<a href="formBuscarMensajero"> Buscar Mensajero </a><br>
+					<a href="formActualizarMensajero">Actualizar mensajero</a><br>
+					<a href="formEliminarMensajero">Eliminar mensajero</a>
 				</div>
 			</div>
 
@@ -80,8 +81,8 @@
 	</div>
 	<div class="border-body rigth-side">
 		<div class="header">
-			<div class="title-blue">Gestión de pedidos</div> 
-			<div class="blue-content">Módulo de gestión y administración de pedidos y mensajeros.</div>
+			<div class="title-blue">Gesti&#243;n de pedidos </div>
+			<div class="blue-content">M&#243;dulo de gesti&#243;n y administraci&#243;n de pedidos y mensajeros.</div>
 		</div>
 		<div class="rigth-side-content">
 			<div class="lane lbl" id="firstLane" ondrop="Mensajeros.drop(event)" ondragover="Mensajeros.allowDrop(event)">

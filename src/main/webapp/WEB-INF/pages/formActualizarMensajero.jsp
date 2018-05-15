@@ -41,7 +41,7 @@
 			<h4>Actualizar mensajero</h4>
 			</div>		
 			
-			<form:form enctype="multipart/form-data" method="POST" id="saveMensajero" modelAttribute="mensajero" class="form__reg" action="${mensajeroSave}" modelAttribut="mensajero" >
+			<form:form enctype="multipart/form-data" method="POST"  modelAttribut="mensajero" >
 				<!-- <div class="dropdown"> 
 				 <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Mensajeros
 				 <span class="caret"></span></button> 

@@ -72,7 +72,5 @@ public class BaseController {
 		logger.info("Se carga la vista de agregar pedido");
 		return "formAgregarPedido";
 	}
-	
-	
-	
+		
 }
