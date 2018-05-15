@@ -11,6 +11,7 @@
 	<spring:url value="/resources/js/bPopUp.js" var="bpopup" />
 	<spring:url value="/resources/js/main.js" var="mainJs" />
 	<spring:url value="/resources/js/ajaxPost.js" var="ajaxPostJs" />
+	<spring:url value="/resources/js/ajaxPost.js" var="ajaxPutJs" />
 	
     <!-- CNDS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -23,7 +24,7 @@
     <script src="${bpopup}"></script>
     <script src="${mainJs}"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	
+	<script src="${ajaxPutJs}"></script>
 	<script src="${ajaxPostJs}"></script>
 	
 	<!-- Estilos -->

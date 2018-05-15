@@ -32,7 +32,7 @@ $(document).ready(function() {
     		   
     	}
     	
-    	console.log("mensajero before PUT: " + mensajero);
+    	alert("mensajero before PUT: " + mensajero);
     	
     	$.ajax({
 			type : "PUT",
