@@ -68,7 +68,7 @@
 				</div>
 			</div>
 			<div class="dropdown buttons">
-				<button id="chat" type="submit" class="btn btn-primary mb-2"><a href="chat">Chat</a></button>
+				<button id="chat" type="submit" class="btn btn-primary mb-2"><a class="btn btn-primary mb-2" href="chat">Chat</a></button>
 			</div>
 			<div class="dropdown buttons">
 				<button type="submit" class="btn btn-primary mb-2">Ayuda</button>
