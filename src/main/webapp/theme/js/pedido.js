@@ -1,47 +1,48 @@
-const config = {
-     apiKey: "AIzaSyC2u0d1Ph7mUk4YvX98XgMqn-0SUGUwZqY",
-     authDomain: "despachadordb.firebaseapp.com",
-     databaseURL: "https://despachadordb.firebaseio.com",
-     projectId: "despachadordb",
-     storageBucket: "despachadordb.appspot.com",
-     messagingSenderId: "341989072839"
-   };
-firebase.initializeApp(config)
-let database = firebase.database()
 var Pedido = {};
-
-Pedido.crearPedido = function(){
-let pedido = {};
-let form = document.getElementById('addPedido')
-   form.addEventListener('submit', event => {
-     event.preventDefault()
-     let direccion = document.querySelector('#direccion').value
-     let fecha = document.querySelector('#fecha').value
-     let id = document.querySelector('#id').value
-     let producto = document.querySelector('#producto').value
-     let total = document.querySelector('#total').value
-     let producto = document.querySelector('#producto').value
-     let cliente = document.querySelector('#cliente').value
-     let nombreCliente = document.querySelector('#nombreCliente').value   
-     database.ref().child('pedido').push().key
-     database.ref('pedido/' + id).set({
-       direccion,
-       fecha,
-       id,
-       producto,
-       total,
-       producto,
-       cliente,
-       nombreCliente
-     });
-   });
-}
-
-Pedido.asignarMesajero =  function(idMensajero){
-let form = document.getElementById('addPedido')
- let nombreCliente = document.querySelector('#nombreCliente').value
- database.ref().child('pedido').push().key
-     database.ref('pedido/' + id).set({
-       direccion,
-     }
-}
+(function (){
+	firebase.initializeApp({
+		 apiKey: "AIzaSyAbmQVqlyO2cUkvQNZMcCV5PI-lqIzg2VE",
+		 authDomain: "pedidos-43e27.firebaseapp.com",
+		 projectId: "pedidos-43e27"
+	});
+	var db = firebase.firestore();
+	
+	//Agregar documentos
+	Pedido.agregarPedido = function(){
+		var id = document.getElementById('id').value;
+		var fecha = document.getElementById('fecha').value;
+		var direccion = document.getElementById('direccion').value;
+		var productos = document.getElementById('productos').value;
+		var total = document.getElementById('total').value;
+		var nomCliente = document.getElementById('nomCliente').value;
+		var idCliente = document.getElementById('idCliente').value;
+		
+		//Aquí va la cajita
+		var string = '<tr> <th scope="row">' + ":c" + '</th> <td>' + nombre + '</td>' + 
+		'<td>' + id + '</td><td>' + placa + '</td><td>' + telefono + '</td></tr>';
+		$('#tabla').append(string);
+		
+		db.collection("Pedido").add({
+			id: id,
+		    fecha: fecha,
+		    direccion: direccion,
+		    productos: productos,
+		    total: total,
+		    nomCliente: nomCliente,
+		    idCliente: idCliente
+		    
+		}).then(function(docRef) {
+		    console.log("Pedido creado: ", docRef.id);
+		    confirm("Pedido creado");
+		    document.getElementById('id').value = '';
+		    document.getElementById('fecha').value = '';
+		    document.getElementById('direccion').value = '';
+		    document.getElementById('productos').value = '';
+		    document.getElementById('total').value = '';
+		    document.getElementById('nomCliente').value = '';
+		    document.getElementById('idCliente').value = '';
+		}).catch(function(error) {
+		    console.error("Error guardando pedido: ", error);
+		});
+	}
+})();

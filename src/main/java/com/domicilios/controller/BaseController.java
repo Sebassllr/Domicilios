@@ -42,35 +42,17 @@ public class BaseController {
 		return "chat";
 	}
 	
-	@RequestMapping(value = "/formActualizarMensajero", method = RequestMethod.GET)
+	@RequestMapping(value = "/mensajero", method = RequestMethod.GET)
 	public String actualizarPage(ModelMap model) {
-		logger.info("Se carga la vista de actualizar mensajero");
-		return "formActualizarMensajero";
+		logger.info("Se carga la vista de mensajero");
+		return "mensajero";
 	}
 	
-	@RequestMapping(value = "/formAgregarMensajero", method = RequestMethod.GET)
-	public String agregarMenPage(ModelMap model) {
-		logger.info("Se carga la vista de agregar mensajero");
-		model.addAttribute("mensajero", new Mensajero());
-		return "formAgregarMensajero";
-	}
 	
-	@RequestMapping(value = "/formBuscarMensajero", method = RequestMethod.GET)
-	public String buscarPage(ModelMap model) {
-		logger.info("Se carga la vista de buscar mensajero");
-		return "formBuscarMensajero";
-	}
-	
-	@RequestMapping(value = "/formEliminarMensajero", method = RequestMethod.GET)
-	public String eliminarPage(ModelMap model) {
-		logger.info("Se carga la vista de eliminar mensajero");
-		return "formEliminarMensajero";
-	}
-	
-	@RequestMapping(value = "/formAgregarPedido", method = RequestMethod.GET)
+	@RequestMapping(value = "/pedido", method = RequestMethod.GET)
 	public String agregarPedPage(ModelMap model) {
 		logger.info("Se carga la vista de agregar pedido");
-		return "formAgregarPedido";
+		return "pedido";
 	}
 		
 }

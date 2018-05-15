@@ -27,6 +27,7 @@ var Despachador = {};
 		    
 		}).then(function(docRef) {
 		    console.log("Mensajero creado: ", docRef.id);
+		    confirm("Mensajero creado");
 		    document.getElementById('nombre').value = '';
 		    document.getElementById('id').value = '';
 		    document.getElementById('telefono').value = '';
@@ -39,10 +40,10 @@ var Despachador = {};
 	db.collection("Mensajeros").get().then(function(querySnapshot) {
 	    querySnapshot.forEach(function(doc) {
 	    	var data = doc;
-	    	var string = '<tr> <th scope="row">' + data.id + '</th> <td>' + data.data().nombre + '</td>' + 
-	    	'<td>' + data.data().id + '</td><td>' + data.data().placa + '</td><td>' + data.data().telefono + '</td></tr>' +
+	    	var string = '<tr> <th scope="row">' + data.data().cc + '</th> <td>' + data.data().nombre + '</td>' + 
+	    	'</th> <td>' + data.data().telefono + '</td>' + '</th> <td>' + data.data().placa + '</td>' +
 	    	'<td><button class="btn btn-danger" onclick ="Despachador.eliminarMensajero(' + doc.id + ')">Eliminar</button></td> '+
-	        '<td><button class="btn btn-warning" onclick ="Despachador.actualizarMensajero(' + doc.id + ', ' + doc.data().nombre +', ' + doc.data().apellido +', ' + doc.data().telefono +', '+ doc.data().placa + ' )">Editar</button></td> </tr>';
+	        '<td><button class="btn btn-warning" onclick ="Despachador.actualizarMensajero(' + doc.id + ', ' + doc.data().nombre +', ' + doc.data().telefono +', '+ doc.data().placa + ' )">Editar</button></td> </tr>';
 	       $('#tabla').append(string);
 	        console.log(doc.id, " => ", doc.data());
 	    });
@@ -58,7 +59,7 @@ var Despachador = {};
 	}
 
 	//Actualizar datos
-	Despachador.actualizarMensajero = function(id, nombre, apellido, telefono, placa){
+	Despachador.actualizarMensajero = function(id, nombre, telefono, placa){
 		document.getElementById('id').value = id;
 		document.getElementById('nombre').value = nombre;
 		document.getElementById('telefono').value = telefono;
@@ -86,11 +87,9 @@ var Despachador = {};
 				document.getElementById('telefono').value = '';
 				document.getElementById('placa').value = '';
 			    
-			})
-			.catch(function(error) {
+			}).catch(function(error) {
 			    console.error("Error actualizando: ", error);
 			});
 		}
 	}
-
 })();

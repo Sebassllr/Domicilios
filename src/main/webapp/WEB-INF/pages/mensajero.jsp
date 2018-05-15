@@ -1,6 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,15 +77,15 @@
 	<body>
 		<div class="container">
 			<h2>Registrar mensajero</h2>
-			<input type="text" id="id" placeholder="id" class="form-control my-3">
-			<input type="text" id="nombre" placeholder="nombre" class="form-control my-3">
-			<input type="text" id="telefono" placeholder="telefono"	class="form-control my-3">  
-			<input type="text" id="placa" placeholder="placa" class="form-control my-3">
+			<input type="text" id="id" placeholder="Identificación" class="form-control my-3">
+			<input type="text" id="nombre" placeholder="Nombre" class="form-control my-3">
+			<input type="text" id="telefono" placeholder="Teléfono"	class="form-control my-3">  
+			<input type="text" id="placa" placeholder="Placa" class="form-control my-3">
 			<button class="btn btn-info" id="boton" onClick="Despachador.agregarMensajero()">Guardar</button>
 			<table class="table">
 				<thead>
 					<tr>
-						<th scope="col">ID</th>
+						<th scope="col">Identificación</th>
 						<th scope="col">Nombre</th>
 						<th scope="col">Teléfono</th>
 						<th scope="col">Placa</th>

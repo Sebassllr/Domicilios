@@ -10,6 +10,7 @@
 	<spring:url value="/resources/js/bootstrap.js" var="boostrapJs" />
 	<spring:url value="/resources/js/bPopUp.js" var="bpopup" />
 	<spring:url value="/resources/js/main.js" var="mainJs" />
+	<spring:url value="/resources/js/pedido.js" var="pedidoJs" />
 	    
     <!-- CNDS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -21,6 +22,7 @@
     <script src="${boostrapJs}"></script>
     <script src="${bpopup}"></script>
     <script src="${mainJs}"></script>
+    <script src="${pedidoJs}"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	
 	<!-- Estilos -->
@@ -35,29 +37,17 @@
 	<body>
 	
  	<!-- Formulario de registro de pedidos -->
-	<div id="popUpAddPedido">
-		<div class="container">
-			<div class="form__top">
-				<h4>Registrar pedido</h4>
-			</div>		
-			<form:form id="addPedido" modelAttribut="pedido" class="form__regPedido" action="/mensajero_save_or_update">
-				<form:input class="input"  placeholder="&#128100; Direccion" path="pedido.direccion"/>
-				<form:input class="input"  placeholder="&#128387; Fecha" path="pedido.fecha"/>
-				<form:input class="input"  placeholder="&#128504; Id" path="pedido.id"/>
-				<form:input class="input"  placeholder="&#128587; Mensajero" path="pedido.idMensajero"/>
-				<form:input class="input"  placeholder="&#127828; Producto" path="pedido.producto"/>
-				<form:input class="input"  placeholder="&#128587; Total" path="pedido.total"/>
-				<form:input class="input"  placeholder="&#127828; Cliente" path="pedido.cliente"/>
-				<form:input class="input"  placeholder="&#127828; Nombre Cliente" path="pedido.nombreCliente"/>
-				<form:input class="input"  placeholder="&#128181;  Id Cliente" path="pedido.idCliente"/>
-				<div class="btn__form">
-					<input class="btn__submit" type="submit" value="Registrar">
-					<input class="btn__reset" type="reset" value="Limpiar">	
-				</div>
-			</form:form>
+ 	<div class="container">
+			<h2>Registrar pedidos</h2>
+			<input type="text" id="id" placeholder="&#128504; Id" class="form-control my-3">
+			<input type="text" id="fecha" placeholder="&#128387; Fecha" class="form-control my-3">
+			<input type="text" id="direccion" placeholder="&#128100; Dirección"	class="form-control my-3">  
+			<input type="text" id="productos" placeholder="&#127828; Productos" class="form-control my-3">
+			<input type="text" id="total" placeholder="&#128587; Total" class="form-control my-3">
+			<input type="text" id="nomCliente" placeholder="&#127828; Nombre cliente" class="form-control my-3">
+			<input type="text" id="idCliente" placeholder="&#128587; Id Cliente" class="form-control my-3">
+			<button class="btn btn-info" id="boton" onClick="Pedido.agregarPedido()">Guardar</button>
 		</div>
-	</div>
-	
 </body>
 
 </html>

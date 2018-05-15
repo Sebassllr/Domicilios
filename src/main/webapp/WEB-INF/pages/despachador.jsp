@@ -57,21 +57,18 @@
 			<div class="dropdown buttons">
 				<button onclick="dropdownMensajero()" class="btn btn-primary mb-2" id="menu1" data-toggle="dropdown" class="dropbtn">Mensajeros</button>
 				<div id="myDropdown" class="dropdown-menu">
-					<a href="formAgregarMensajero">Agregar mensajero</a> <br>
-					<a href="formBuscarMensajero"> Buscar Mensajero </a><br>
-					<a href="formActualizarMensajero">Actualizar mensajero</a><br>
-					<a href="formEliminarMensajero">Eliminar mensajero</a>
+					<a href="mensajero">Administrar</a>
 				</div>
 			</div>
 
 			<div class="dropdown buttons">
 				<button onclick="dropdownMensajero2()"  class="btn btn-primary mb-2"  id="menu2" data-toggle="dropdown" class="dropbtn">Pedido</button>
 				<div id="myDropdown2" class="dropdown-menu">
-					<a href="formAgregarPedido">Crear pedido</a> 
+					<a href="pedido">Crear pedido</a> 
 				</div>
 			</div>
 			<div class="dropdown buttons">
-				<button id="chat" type="submit" class="btn btn-primary mb-2"><a class="btn btn-primary mb-2" href="chat.html">Chat</a></button>
+				<button id="chat" type="submit" class="btn btn-primary mb-2"><a href="chat">Chat</a></button>
 			</div>
 			<div class="dropdown buttons">
 				<button type="submit" class="btn btn-primary mb-2">Ayuda</button>
