@@ -71,7 +71,7 @@ var Mensajeros = {};
 	}
 	
 	Mensajeros.popUpDelete = function(){
-		$dialog = $('<div></div>').html('<iframe src="formEliminarMensajero" class=""><iframe>').dialog({
+		$dialog = $('<div></div>').html('<iframe id="addFrame" src="formEliminarMensajero" class=""><iframe>').dialog({
 			autoOpen: false,
 			modal: true,
 			height: 500,
@@ -81,7 +81,6 @@ var Mensajeros = {};
 					text: 'Eliminar',
 					'class': 'btn__submit',
 					click: function(){
-						alert("Eliminado.");
 						Mensajeros.saveOrUpdateForm.submit();
 					}
 				}
