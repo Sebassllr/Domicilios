@@ -44,7 +44,7 @@
 		<div class="_secondary">
 			<div class="form">
 				<button id="btnEnviar" class="">Enviar</button>
-				<input id="nombre" placeholder="Ingresa tú mensaje...">
+				<input id="nombre" placeholder="Ingresa tú mensaje..." readonly>
 				<textarea  id="mensaje" class="_twemoji_input" rows="7"></textarea>
 				<p class="_disclaimer"><img class="emoji" src="https://twemoji.maxcdn.com/36x36/1f64c.png"> Envia tú mensaje <img class="emoji" src="https://twemoji.maxcdn.com/36x36/1f30d.png"></p>
 			</div>
