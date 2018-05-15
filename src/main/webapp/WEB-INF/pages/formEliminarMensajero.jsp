@@ -25,6 +25,10 @@
 	integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
 	crossorigin="anonymous"></script>
 
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script
+	src="https://www.gstatic.com/firebasejs/4.11.0/firebase-firestore.js"></script>
+
 <!-- Javasript -->
 <script src="${jqueryJs}"></script>
 <script src="${boostrapJs}"></script>
@@ -32,9 +36,7 @@
 <script src="${mainJs}"></script>
 <script src="${formMensajeroJs}"></script>
 
-<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-<script
-	src="https://www.gstatic.com/firebasejs/4.11.0/firebase-firestore.js"></script>
+
 
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript"
@@ -75,91 +77,28 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
-<body>
-	<script type="text/javascript">
-		firebase.initializeApp({
-			 apiKey: "AIzaSyAbmQVqlyO2cUkvQNZMcCV5PI-lqIzg2VE",
-			 authDomain: "pedidos-43e27.firebaseapp.com",
-			 projectId: "pedidos-43e27"
-		});
-	
-		// Initialize Cloud Firestore through Firebase
-		var db = firebase.firestore();
-	//Agregar documentos
-	function guardar(){
-		var nombre = document.getElementById('nombre').value;
-		var id = document.getElementById('id').value;
-		var placa = document.getElementById('placa').value;
-		var telefono = document.getElementById('telefono').value;
-		
-		db.collection("Mensajeros").add({
-			nombre: nombre,
-		    cc: id,
-		    placa: placa,
-		    telefono: telefono
-		    
-		})
-		.then(function(docRef) {
-		    console.log("Document written with ID: ", docRef.id);
-		    document.getElementById('nombre').value = '';
-		    document.getElementById('id').value = '';
-		    document.getElementById('placa').value = '';
-		    document.getElementById('telefono').value = '';
-		})
-		.catch(function(error) {
-		    console.error("Error adding document: ", error);
-		});
-		
-	
-	}
-	//lee datos
-	var tabla = document.getElementById('tabla');
-	db.collection("mensajeros").onSnapshot((querySnapshot) => {
-	  tabla.innerHTML = '';
-	  querySnapshot.forEach((doc) => {
-	       console.log(`${doc.id} => ${doc.data()}`);
-	       tabla.innerHTML += `
-		     <tr>
-		     <th scope="row">${doc.id}</th>
-		     <td>${doc.data().nombre}</td>
-		     <td>${doc.data().id}</td>
-		     <td>${doc.data().placa}</td>
-		     <td>${doc.data().telefono}</td>
-	     
-		   </tr>
-		   `
-	   });
-	});
-	
-		
-	</script>
 	<body>
-	<div class="container">
-		<h2>Mensajeros</h2>
-		<input type="text" id="nombre" placeholder="nombre" class="form-control my-3"> <input type="text" id="id" placeholder="id" class="form-control my-3"> 
-		<input type="text" id="placa" placeholder="placa" class="form-control my-3">
-		<input type="text" id="telefono" placeholder="telefono"	class="form-control my-3">
-		<button class="btn btn-info" id="boton" onClick="guardar()">Guardar</button>
-		
-		<table class="table">
-			<thead>
-				<tr>
-					<th scope="col">ID</th>
-					<th scope="col">Nombre</th>
-					<th scope="col">Apellido</th>
-					<th scope="col">Teléfono</th>
-					<th scope="col">Placa</th>
-					<th scope="col">Editar</th>
-					<th scope="col">Eliminar</th>
-				</tr>
-			</thead>
-			<tbody id="tabla">
-				
-			</tbody>
-		</table>
-	</div>
-
-</body>
-
-
+		<div class="container">
+			<h2>Mensajeros</h2>
+			<input type="text" id="nombre" placeholder="nombre" class="form-control my-3"> <input type="text" id="id" placeholder="id" class="form-control my-3"> 
+			<input type="text" id="placa" placeholder="placa" class="form-control my-3">
+			<input type="text" id="telefono" placeholder="telefono"	class="form-control my-3">
+			<button class="btn btn-info" id="boton" onClick="guardar()">Guardar</button>
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Nombre</th>
+						<th scope="col">Teléfono</th>
+						<th scope="col">Placa</th>
+						<th scope="col">Editar</th>
+						<th scope="col">Eliminar</th>
+					</tr>
+				</thead>
+				<tbody id="tabla">
+					
+				</tbody>
+			</table>
+		</div>
+	</body>
 </html>

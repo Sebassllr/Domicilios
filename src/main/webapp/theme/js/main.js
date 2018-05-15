@@ -188,7 +188,7 @@ var Mensajeros = {};
 
 function dropdownMensajero() {
 	document.getElementById("myDropdown").classList.toggle("show");
-	
+}
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
@@ -226,5 +226,4 @@ window.onclick = function(event) {
 
 $(function() {
 	Mensajeros.initializer();
-
 });
