@@ -268,3 +268,6 @@ h2 span {
 	align-content: center;
 }
 
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}

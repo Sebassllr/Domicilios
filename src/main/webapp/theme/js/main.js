@@ -11,6 +11,7 @@ var Mensajeros = {};
 		$('#actuMensajero').click(Mensajeros.popUpDate);
 		$('#buscarMensajero').click(Mensajeros.popUpSearch);
 		$('#addPedido').click(Mensajeros.popUpAddPedido);
+		
 	}
 
 	Mensajeros.allowDrop = function(ev) {
@@ -39,7 +40,7 @@ var Mensajeros = {};
 	}
 
 	Mensajeros.popUpAdd = function(){
-		$dialog = $('<div></div>').html('<iframe id="addFrame" src="formAgregarMensajero" class=""><iframe>').dialog({
+		$dialog = $('<div></div>').html('<iframe id="addFrame" src="formActualizarMensajero" class=""></iframe>').dialog({
 			autoOpen: false,
 			modal: true,
 			height: 500,
@@ -78,8 +79,10 @@ var Mensajeros = {};
 			buttons:{
 				"Eliminar" : {
 					text: 'Eliminar',
+					'class': 'btn__submit',
 					click: function(){
 						alert("Eliminado.");
+						Mensajeros.saveOrUpdateForm.submit();
 					}
 				}
 			},
@@ -101,12 +104,13 @@ var Mensajeros = {};
 		$dialog = $('<div></div>').html('<iframe src="formActualizarMensajero" class=""><iframe>').dialog({
 			autoOpen: false,
 			modal: true,
-			height: 1000,
-			width: 1000,
+			height: 500,
+			width: 500,
 			buttons:{
 				"Actualizar" : {
 					text: 'Actualizar',
 					click: function(){
+						Mensajeros.saveOrUpdateForm.submit();
 						alert("Actualizado.");
 					}
 				}
@@ -183,6 +187,45 @@ var Mensajeros = {};
 	}
 })();
 
-$(function(){
+function dropdownMensajero() {
+	document.getElementById("myDropdown").classList.toggle("show");
+	
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+	if (!event.target.matches('.dropbtn')) {
+
+		var dropdowns = document.getElementsByClassName("dropdown-menu");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+			var openDropdown = dropdowns[i];
+			if (openDropdown.classList.contains('show')) {
+				openDropdown.classList.remove('show');
+			}
+		}
+	}
+}
+
+function dropdownMensajero2() {
+	document.getElementById("myDropdown2").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+	if (!event.target.matches('.dropbtn')) {
+
+		var dropdowns = document.getElementsByClassName("dropdown-menu");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+			var openDropdown = dropdowns[i];
+			if (openDropdown.classList.contains('show')) {
+				openDropdown.classList.remove('show');
+			}
+		}
+	}
+}
+
+$(function() {
 	Mensajeros.initializer();
+
 });
