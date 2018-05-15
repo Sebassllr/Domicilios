@@ -77,10 +77,10 @@
 	<body>
 		<div class="container">
 			<h2>Registrar mensajero</h2>
-			<input type="text" id="id" placeholder="Identificación" class="form-control my-3">
-			<input type="text" id="nombre" placeholder="Nombre" class="form-control my-3">
-			<input type="text" id="telefono" placeholder="Teléfono"	class="form-control my-3">  
-			<input type="text" id="placa" placeholder="Placa" class="form-control my-3">
+			<input type="text" id="id" placeholder="&#128387; Identificación" class="form-control my-3">
+			<input type="text" id="nombre" placeholder="&#128100; Nombre" class="form-control my-3">
+			<input type="text" id="telefono" placeholder="&#128222; Teléfono"	class="form-control my-3">  
+			<input type="text" id="placa" placeholder="&#128504; Placa" class="form-control my-3">
 			<button class="btn btn-info" id="boton" onClick="Despachador.agregarMensajero()">Guardar</button>
 			<table class="table">
 				<thead>
