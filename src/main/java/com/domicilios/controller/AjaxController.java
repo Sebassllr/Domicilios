@@ -66,7 +66,7 @@ public class AjaxController {
         return pedidos;
     }
     
-    @RequestMapping(value = "/deleteMensajeros", method = RequestMethod.POST) 
+    @RequestMapping(value = "/postMan", method = RequestMethod.POST) 
     public @ResponseBody String postman() {
     	
         return "";
