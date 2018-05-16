@@ -3,6 +3,7 @@ var Mensajeros = {};
 (function() {
 
 	Mensajeros.saveOrUpdateForm = "";
+	Mensajeros.dataAjax = "";
 	
 	Mensajeros.initializer = function(){
 		$('.mensajero').dblclick(Mensajeros.popUpAsignar);
@@ -12,8 +13,21 @@ var Mensajeros = {};
 		$('#buscarMensajero').click(Mensajeros.popUpSearch);
 		$('#addPedido').click(Mensajeros.popUpAddPedido);
 		
+		Mensajeros.ajax();
 	}
 
+	Mensajeros.erase = function(){
+		var child = $(this).children().children();
+        $.ajax({
+            url : 'deletePedido/'+ child[0].innerText ,
+            type : 'DELETE',
+            data : 'data=' + child[0].innerText,
+            success: function(data){
+            	$('.overflow').empty();
+            	Mensajeros.drawCajita(data);
+            }
+        })
+	}
 	Mensajeros.allowDrop = function(ev) {
     	ev.preventDefault();
 	}
@@ -182,9 +196,9 @@ var Mensajeros = {};
 	Mensajeros.ajax = function(){
         $.ajax({
             url : 'ajaxtest.html',
-            type : 'POST',
+            type : 'PUT',
             success : function(data) {
-            	console.log(data);
+            	Mensajeros.drawCajita(data);
             }
         });
 	}
@@ -192,15 +206,29 @@ var Mensajeros = {};
 
 	
 	Mensajeros.drawCajita = function(data){
-		for (var i = 0; i < data.length; i++) {
-			var box = 	`<div draggable="true" ondragstart="Mensajeros.drag(event)" class="mensajero" id="mensajero2">
+		Mensajeros.dataAjax = data;
+		var dataSplitted = data.split(";");
+		
+		for (var i = 0; i < dataSplitted.length; i++) {
+			var item = dataSplitted[i].split(",");
+			var name = item[0];
+			var date = item[1];
+			var mensajeroAsing = item[2];
+			
+			var box = `<div draggable="true" ondragstart="Mensajeros.drag(event)" class="mensajero" id="mensajero2">
 							<div class="border-blue">
-							<div>${data.nobre}</div>
-							<div>Fecha de pedido</div>
-							<div>Mensajero asignado</div>
+							<div class="name">${name}</div>
+							<div>${date}</div>
+							<div>${mensajeroAsing}</div>
 						</div>
 					</div>`;
+			$('#firstLane').append(box);
+			Mensajeros.addClickEvent();
 		}
+	}
+	
+	Mensajeros.addClickEvent = function(){
+		$('.mensajero').dblclick(Mensajeros.erase);
 	}
 	
 })();

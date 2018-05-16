@@ -74,46 +74,17 @@
 			<div class="blue-content">M&#243;dulo de gesti&#243;n y administraci&#243;n de pedidos y mensajeros.</div>
 		</div>
 		<div class="rigth-side-content">
-			<div class="lane lbl" id="firstLane" ondrop="Mensajeros.drop(event)" ondragover="Mensajeros.allowDrop(event)">
-				<div class="tag">En espera</div>
-				<div draggable="true" ondragstart="Mensajeros.drag(event)" class="mensajero" id="mensajero1">
-					<div class="border-blue">
-						<div>Pedido 1</div>
-						<div>Fecha de pedido</div>
-						<div>Mensajero asignado</div>
-					</div>
-				</div>
-				<div draggable="true" ondragstart="Mensajeros.drag(event)" class="mensajero" id="mensajero2">
-					<div class="border-blue">
-						<div>Pedido 1</div>
-						<div>Fecha de pedido</div>
-						<div>Mensajero asignado</div>
-					</div>
-				</div>
-				<c:if test = "${not empty mensajero}">
-					<div draggable="true" ondragstart="Mensajeros.drag(event)" class="mensajero" id="mensajero2">
-						<div class="border-blue">
-							<div>Pedido 1</div>
-							<div>Fecha de pedido</div>
-							<div>Mensajero asignado</div>
-						</div>
-					</div>
-				</c:if>
-				<div draggable="true" ondragstart="Mensajeros.drag(event)" class="mensajero" id="mensajero3">
-					<div class="border-blue">
-						<div>Pedido 1</div>
-						<div>Fecha de pedido</div>
-						<div>Mensajero asignado</div>
-					</div>
-				</div>
-			</div>
 			<div class="lane lbl" ondrop="Mensajeros.drop(event)" ondragover="Mensajeros.allowDrop(event)">
+				<div class="tag">En espera</div>
+				<div id="firstLane" class="overflow style-3"></div>
+			</div>
+			<div class="lane lbl style-3" ondrop="Mensajeros.drop(event)" ondragover="Mensajeros.allowDrop(event)">
 				<div class="tag">Despachado</div>
 			</div>
-			<div class="lane lbl" ondrop="Mensajeros.drop(event)" ondragover="Mensajeros.allowDrop(event)">
+			<div class="lane lbl style-3" ondrop="Mensajeros.drop(event)" ondragover="Mensajeros.allowDrop(event)">
 				<div class="tag">Entregado</div>
 			</div>
-			<div class="lane lbl" ondrop="Mensajeros.drop(event)" ondragover="Mensajeros.allowDrop(event)">
+			<div class="lane lbl style-3" ondrop="Mensajeros.drop(event)" ondragover="Mensajeros.allowDrop(event)">
 				<div class="tag">Cancelado</div>
 			</div>
 		</div>
