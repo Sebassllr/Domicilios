@@ -28,6 +28,18 @@ var Mensajeros = {};
             }
         })
 	}
+	
+	Mensajeros.postMan = function(){
+		var child = $(this).children().children();
+        $.ajax({
+            url : 'postMan',
+            type : 'POST',
+            success: function(data){
+            	alert(data);
+            }
+        })
+	}
+	
 	Mensajeros.allowDrop = function(ev) {
     	ev.preventDefault();
 	}
@@ -229,6 +241,7 @@ var Mensajeros = {};
 	
 	Mensajeros.addClickEvent = function(){
 		$('.mensajero').dblclick(Mensajeros.erase);
+		$('.mensajero').click(Mensajeros.postMan);
 	}
 	
 })();

@@ -1,5 +1,6 @@
 package com.domicilios.controller;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,8 @@ import com.domicilios.entity.Pedido;
 
 @Controller
 public class AjaxController {
+	
+	private final static org.slf4j.Logger logger = LoggerFactory.getLogger(AjaxController.class);
 	
     @RequestMapping("/ajax")
     public ModelAndView helloAjaxTest() {
@@ -68,7 +71,7 @@ public class AjaxController {
     
     @RequestMapping(value = "/postMan", method = RequestMethod.POST) 
     public @ResponseBody String postman() {
-    	
-        return "";
+    	logger.info("Pasé por el controllador!");
+        return "Pasé por el controllador!";
     }
 }
