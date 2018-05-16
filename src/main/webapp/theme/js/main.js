@@ -100,7 +100,7 @@ var Mensajeros = {};
 	}
 	
 	Mensajeros.popUpDate = function(){
-		$dialog = $('<div></div>').html('<iframe src="formActualizarMensajero" class=""><iframe>').dialog({
+		$dialog = $('<div></div>').html('<iframe id="addFrame" src="formActualizarMensajero" class=""><iframe>').dialog({
 			autoOpen: false,
 			modal: true,
 			height: 500,
@@ -129,7 +129,7 @@ var Mensajeros = {};
 	}
 	
 	Mensajeros.popUpSearch = function(){
-		$dialog = $('<div></div>').html('<iframe src="formBuscarMensajero" class=""><iframe>').dialog({
+		$dialog = $('<div></div>').html('<iframe id="addFrame" src="formBuscarMensajero" class=""><iframe>').dialog({
 			autoOpen: false,
 			modal: true,
 			height: 500,

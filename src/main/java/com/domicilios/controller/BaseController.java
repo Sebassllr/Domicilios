@@ -54,5 +54,11 @@ public class BaseController {
 		logger.info("Se carga la vista de agregar pedido");
 		return "pedido";
 	}
+	
+	@RequestMapping(value = "/formBuscarMensajero", method = RequestMethod.GET)
+	public String formBuscarMensajeroPage(ModelMap model) {
+		logger.info("Se carga la vista de agregar pedido");
+		return "formBuscarMensajero";
+	}
 		
 }
