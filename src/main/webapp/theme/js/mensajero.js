@@ -1,5 +1,9 @@
 var Despachador = {};
+
 (function (){
+	
+	Despachador.id=null;
+	
 	firebase.initializeApp({
 		 apiKey: "AIzaSyAbmQVqlyO2cUkvQNZMcCV5PI-lqIzg2VE",
 		 authDomain: "pedidos-43e27.firebaseapp.com",
@@ -42,8 +46,8 @@ var Despachador = {};
 	    	var data = doc;
 	    	var string = '<tr> <th scope="row">' + data.data().cc + '</th> <td>' + data.data().nombre + '</td>' + 
 	    	'</th> <td>' + data.data().telefono + '</td>' + '</th> <td>' + data.data().placa + '</td>' +
-	    	'<td><button class="btn btn-danger" onclick ="Despachador.eliminarMensajero(' + doc.id + ')">Eliminar</button></td> '+
-	        '<td><button class="btn btn-warning" onclick ="Despachador.actualizarMensajero(' + doc.id + ', ' + doc.data().nombre +', ' + doc.data().telefono +', '+ doc.data().placa + ' )">Editar</button></td> </tr>';
+	    	'<td><button class="btn btn-danger" onclick ="Despachador.eliminarMensajero(\''+doc.id+'\')">Eliminar</button></td> '+
+	        '<td><button class="btn btn-warning" onclick ="Despachador.actualizarMensajero(\'' + doc.id + '\',\'' + doc.data().nombre +'\', \'' + doc.data().telefono +'\',\''+ doc.data().placa + '\' )">Editar</button></td> </tr>';
 	       $('#tabla').append(string);
 	        console.log(doc.id, " => ", doc.data());
 	    });
@@ -60,15 +64,16 @@ var Despachador = {};
 
 	//Actualizar datos
 	Despachador.actualizarMensajero = function(id, nombre, telefono, placa){
+		Despachador.id=id;
 		document.getElementById('id').value = id;
 		document.getElementById('nombre').value = nombre;
 		document.getElementById('telefono').value = telefono;
 		document.getElementById('placa').value = placa;
-		var boton = getElementById('boton');
+		var boton = document.getElementById('boton');
 		boton.innerHTML = 'Editar';
 		
 		boton.onclick = function(){
-			var mensajeroRef = db.collection("Mensajeros").doc(id);
+			var mensajeroRef = db.collection("Mensajeros").doc(Despachador.id);
 			var id = document.getElementById('id').value;
 			var nombre = document.getElementById('nombre').value;
 			var telefono = document.getElementById('telefono').value;
