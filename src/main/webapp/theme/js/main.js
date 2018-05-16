@@ -177,13 +177,32 @@ var Mensajeros = {};
 		
 		$dialog.dialog('open');
 		return $dialog;
-		
-		/*$('#popUpAddPedido').bPopup({
-            speed: 650,
-            transition: 'slideIn',
-	    	transitionClose: 'slideBack'
-        });*/
 	}
+	
+	Mensajeros.ajax = function(){
+        $.ajax({
+            url : 'ajaxtest.html',
+            type : 'POST',
+            success : function(data) {
+            	console.log(data);
+            }
+        });
+	}
+	
+
+	
+	Mensajeros.drawCajita = function(data){
+		for (var i = 0; i < data.length; i++) {
+			var box = 	`<div draggable="true" ondragstart="Mensajeros.drag(event)" class="mensajero" id="mensajero2">
+							<div class="border-blue">
+							<div>${data.nobre}</div>
+							<div>Fecha de pedido</div>
+							<div>Mensajero asignado</div>
+						</div>
+					</div>`;
+		}
+	}
+	
 })();
 
 function dropdownMensajero() {

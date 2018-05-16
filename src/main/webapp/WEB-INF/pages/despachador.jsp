@@ -46,7 +46,6 @@
 			<div class="title"></div>
 		</div>
 		<div  class="btn-group">
-	
 			<div class="dropdown buttons">
 				<button onclick="dropdownMensajero()" class="btn btn-primary mb-2" id="menu1" data-toggle="dropdown" class="dropbtn">Mensajeros</button>
 				<div id="myDropdown" class="dropdown-menu">
