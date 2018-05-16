@@ -46,15 +46,6 @@
 			<div class="title"></div>
 		</div>
 		<div  class="btn-group">
-			<!-- <div class="dropdown buttons">
-				<button class="btn btn-primary mb-2" id="menu1" data-toggle="dropdown">Mensajeros </button> 
-					<ul class="dropdown-menu" type="submit" role="menu" aria-labelledby="menu1"> 
-						 <li id="addMensajero">Agregar </li>
-						 <li id="actuMensajero">Actualizar </li>
-						 <li id="buscarMensajero">Buscar </li>
-						 <li id="eliminarMesajero">Eliminar </li>
-					</ul>
-			</div> -->
 			<div class="dropdown buttons">
 				<button onclick="dropdownMensajero()" class="btn btn-primary mb-2" id="menu1" data-toggle="dropdown" class="dropbtn">Mensajeros</button>
 				<div id="myDropdown" class="dropdown-menu">
